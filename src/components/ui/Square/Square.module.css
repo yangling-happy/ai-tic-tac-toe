@@ -1,0 +1,61 @@
+.square {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--color-gray-300);
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-2xl);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.square:hover:not(.disabled) {
+  border-color: var(--color-primary);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.square:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.square.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.square.winning {
+  background: var(--color-success);
+  color: var(--color-white);
+  border-color: var(--color-success);
+  animation: pulse 2s infinite;
+}
+
+.square.x {
+  color: var(--color-primary);
+}
+
+.square.o {
+  color: var(--color-warning);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .square {
+    width: 60px;
+    height: 60px;
+    font-size: var(--font-size-xl);
+  }
+}

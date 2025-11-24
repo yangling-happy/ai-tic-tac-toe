@@ -1,0 +1,36 @@
+.status {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.mode {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  margin-bottom: var(--space-2);
+  font-weight: 500;
+}
+
+.message {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--color-gray-800);
+  transition: color var(--transition-fast);
+}
+
+.message.gameOver {
+  color: var(--color-success);
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  80% { transform: translateY(-5px); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .message {
+    font-size: var(--font-size-lg);
+  }
+}
